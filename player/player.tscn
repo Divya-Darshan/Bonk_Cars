@@ -3,29 +3,65 @@
 [ext_resource type="Script" uid="uid://bo08v6dv88coy" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://b7erxjhraosy4" path="res://asset/Images/Car/RedCar.png" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://du04kqv0bcn0s" path="res://player/wheel_s.tscn" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://b04boa5cnpqnd" path="res://asset/Images/Characters/Head2.png" id="4_yw30f"]
+[ext_resource type="Texture2D" uid="uid://bxyvwx3h2gpe5" path="res://asset/Images/Characters/Body2.png" id="5_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://5u5pvy4ip2qb" path="res://asset/Images/Characters/Body.png" id="6_g6k8r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
 
 [node name="player" type="RigidBody2D" unique_id=163199929 groups=["player"]]
 script = ExtResource("1_g1dw6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=781792945]
+
+[node name="back" type="TouchScreenButton" parent="CanvasLayer" unique_id=94348228]
+position = Vector2(80, 392)
+scale = Vector2(2.955, 2.955)
+texture_normal = ExtResource("5_qjkh3")
+texture_pressed = ExtResource("6_g6k8r")
+passby_press = true
+action = "ui_down"
+
+[node name="front" type="TouchScreenButton" parent="CanvasLayer" unique_id=788424368]
+position = Vector2(1096, 407.99997)
+scale = Vector2(-2.955, 2.7)
+texture_normal = ExtResource("5_qjkh3")
+texture_pressed = ExtResource("6_g6k8r")
+passby_press = true
+action = "ui_up"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1456891775]
+polygon = PackedVector2Array(-100, -26, -67, -28, -44, -11, -3, -14, 6, -26, 53, -20, 74, -14, 86, -9, 95, -4, 101, 4, 105, 19, 104, 30, 99, 37, 94, 41, 88, 43, 80, 43, -103, 49, -108, 41, -109, 31, -109, -14, -108, -22)
 
 [node name="car" type="Sprite2D" parent="." unique_id=674603667]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_g1dw6")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2141567344]
+[node name="back_con" type="PinJoint2D" parent="." unique_id=2141567344]
 position = Vector2(-77, 45)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.5
 
-[node name="wheel_s" parent="PinJoint2D" unique_id=271990230 instance=ExtResource("3_g1dw6")]
+[node name="wheel_s" parent="back_con" unique_id=271990230 instance=ExtResource("3_g1dw6")]
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="." unique_id=1218853000]
+[node name="front_con" type="PinJoint2D" parent="." unique_id=1218853000]
 position = Vector2(55, 44)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.25
 
-[node name="wheel_s" parent="PinJoint2D2" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
+[node name="wheel_s" parent="front_con" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1456891775]
-polygon = PackedVector2Array(-107, -21, -100, -26, -89, -26, -67, -27, 7, -25, 48, -20, 74, -14, 86, -9, 95, -4, 100, 3, 101, 11, 101, 25, 100, 38, 94, 41, 88, 43, 80, 43, -103, 49, -108, 41, -109, 31, -109, 22)
+[node name="head" type="Sprite2D" parent="." unique_id=498976959]
+position = Vector2(-30.021416, -42.021416)
+rotation = -0.14939533
+scale = Vector2(0.37066638, 0.37066638)
+texture = ExtResource("4_yw30f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1484627954]
+position = Vector2(-30.000002, -38)
+rotation = -0.025150482
+scale = Vector2(2.9970934, 2.8655856)
+shape = SubResource("CircleShape2D_yw30f")
+one_way_collision_margin = 0.0

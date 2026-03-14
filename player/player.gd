@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var engine_force: float = 900.0
+@export var engine_force: float = 770.0
 @export var reverse_force: float = 1200.0
 @export var air_spin_force: float = 25000.0
 @export var jump_force: float = 50000.0
@@ -10,6 +10,9 @@ extends RigidBody2D
 @export var wobble_strength: float = 500000.0
 @export var bounce_force: float = 100000.0
 @export var sideways_chaos: float = 40000.0
+
+
+
 
 
 func _physics_process(delta):
