@@ -5,6 +5,6 @@ https://youtu.be/nPX9MrnvNLo?si=omcBljoUnJu8I98_
 
 <p align="center">
   <a href="https://raw.githubusercontent.com/Divya-Darshan/Bonk_Cars/main/app/app.apk">
-    <img src="https://img.shields.io/badge/Download%20APK-1C7CFF?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=1C7CFF" height="130"/>
+   <img src="https://img.shields.io/badge/Download%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=3DDC84" height="130"/>
   </a>
 </p>
