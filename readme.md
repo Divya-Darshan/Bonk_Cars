@@ -1,9 +1,10 @@
-https://tortor-collective.itch.io/cybersamurai
+<!--- https://tortor-collective.itch.io/cybersamurai
 
 https://youtu.be/nPX9MrnvNLo?si=omcBljoUnJu8I98_
+-->
 
-###  **Download Android APK**
-
-<a href="https://raw.githubusercontent.com/Divya-Darshan/Bonk_Cars/main/app/app.apk">
-  <img src="https://img.shields.io/badge/Download%20APK-1C7CFF?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=1C7CFF" height="130"/>
-</a>
+<p align="center">
+  <a href="https://raw.githubusercontent.com/Divya-Darshan/Bonk_Cars/main/app/app.apk">
+    <img src="https://img.shields.io/badge/Download%20APK-1C7CFF?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=1C7CFF" height="130"/>
+  </a>
+</p>
