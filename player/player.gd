@@ -3,13 +3,13 @@ extends RigidBody2D
 @export var engine_force: float = 1000.0
 @export var reverse_force: float = 900.0
 @export var air_spin_force: float = 250000.0
-@export var jump_force: float = 50000.0
+@export var jump_force: float = 500.0
 
-@export var wheelie_torque: float = 69600.0 + 191000.0 - 39000.0
+@export var wheelie_torque: float = 69600.0 + 191000.0 
 
-@export var wobble_strength: float = 500000.0
-@export var bounce_force: float = 100000.0
-@export var sideways_chaos: float = 40000.0
+@export var wobble_strength: float = 5000.0
+@export var bounce_force: float = 1000.0
+@export var sideways_chaos: float = 4000.0
 
 
 func player(): 

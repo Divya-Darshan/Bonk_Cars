@@ -2,12 +2,39 @@
 
 [ext_resource type="Texture2D" uid="uid://dpp3bjq3vt2s" path="res://terrain/map/flat.png" id="1_2v1fu"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2v1fu"]
+
 [node name="t1" type="StaticBody2D" unique_id=43852366]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210050360]
+[node name="BoxContainer" type="VBoxContainer" parent="." unique_id=779670957]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer" unique_id=210050360]
 position = Vector2(582, 326)
 scale = Vector2(0.61544114, 0.60483706)
 texture = ExtResource("1_2v1fu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=94918529]
 polygon = PackedVector2Array(-51, 273, -29, 270, 88, 269, 109, 276, 133, 289, 160, 301, 179, 315, 191, 331, 207, 345, 242, 345, 244, 376, 188, 369, 133, 323, 48, 305, -5, 309, -54, 309)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=605158920]
+position = Vector2(454, -51)
+polygon = PackedVector2Array(-45, 281, -34, 281, 79, 280, 109, 276, 133, 289, 160, 301, 179, 315, 193, 323, 219, 317, 221, 349, 217, 388, 175, 393, 97, 395, 71, 355, -4, 353, -45, 343)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=681273279]
+position = Vector2(454, -51)
+polygon = PackedVector2Array(742, 552, 676, 513, 418, 511, 351, 544, 303, 586, 179, 588, 107, 626, 74, 625, 73, 700, 126, 732, 474, 763, 701, 748, 865, 731, 833, 581)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="." unique_id=873417159]
+position = Vector2(454, -51)
+polygon = PackedVector2Array(-171, 658, -170, 627, -404, 628, -425, 600, -465, 572, -481, 568, -492, 566, -519, 674, -516, 724, -461, 761, -373, 764, -245, 769, -174, 742)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850608567]
+position = Vector2(-24, 248)
+rotation = 1.5707964
+scale = Vector2(1.9716315, 1.9716315)
+shape = SubResource("WorldBoundaryShape2D_2v1fu")
