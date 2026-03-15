@@ -67,7 +67,7 @@ script = ExtResource("8_k3n1d")
 [node name="t1" parent="." unique_id=2011344401 instance=ExtResource("1_gbfbk")]
 
 [node name="player" parent="." unique_id=163199929 instance=ExtResource("2_tlwt5")]
-position = Vector2(86, 186)
+position = Vector2(37, 193)
 
 [node name="fuel" parent="." unique_id=1598079040 instance=ExtResource("3_tlwt5")]
 position = Vector2(751, 500)

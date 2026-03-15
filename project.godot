@@ -19,6 +19,11 @@ run/main_scene="uid://ckavqb25bdaul"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
