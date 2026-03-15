@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bxyvwx3h2gpe5" path="res://asset/Images/Characters/Body2.png" id="5_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://5u5pvy4ip2qb" path="res://asset/Images/Characters/Body.png" id="6_g6k8r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6k8r"]
+radius = 37.0
+height = 228.27727
 
 [node name="player" type="RigidBody2D" unique_id=163199929 groups=["player"]]
 script = ExtResource("1_g1dw6")
@@ -30,15 +32,12 @@ texture_pressed = ExtResource("6_g6k8r")
 passby_press = true
 action = "ui_up"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1456891775]
-polygon = PackedVector2Array(-100, -26, -67, -28, -44, -11, -3, -14, 6, -26, 53, -20, 74, -14, 86, -9, 95, -4, 101, 4, 105, 19, 104, 30, 99, 37, 94, 41, 88, 43, 80, 43, -103, 49, -108, 41, -109, 31, -109, -14, -108, -22)
-
 [node name="car" type="Sprite2D" parent="." unique_id=674603667]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_g1dw6")
 
 [node name="back_con" type="PinJoint2D" parent="." unique_id=2141567344]
-position = Vector2(-77, 45)
+position = Vector2(-61, 32)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.5
@@ -46,7 +45,7 @@ softness = 2.5
 [node name="wheel_s" parent="back_con" unique_id=271990230 instance=ExtResource("3_g1dw6")]
 
 [node name="front_con" type="PinJoint2D" parent="." unique_id=1218853000]
-position = Vector2(55, 44)
+position = Vector2(70, 31)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.25
@@ -54,14 +53,12 @@ softness = 2.25
 [node name="wheel_s" parent="front_con" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
 
 [node name="head" type="Sprite2D" parent="." unique_id=498976959]
-position = Vector2(-30.021416, -42.021416)
+position = Vector2(-12.021416, -55.021416)
 rotation = -0.14939533
 scale = Vector2(0.37066638, 0.37066638)
 texture = ExtResource("4_yw30f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1484627954]
-position = Vector2(-30.000002, -38)
-rotation = -0.025150482
-scale = Vector2(2.9970934, 2.8655856)
-shape = SubResource("CircleShape2D_yw30f")
-one_way_collision_margin = 0.0
+[node name="body" type="CollisionShape2D" parent="." unique_id=1344545330]
+position = Vector2(2, -2)
+rotation = -1.5779412
+shape = SubResource("CapsuleShape2D_g6k8r")

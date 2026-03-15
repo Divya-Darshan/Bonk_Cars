@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-@export var engine_force: float = 770.0
-@export var reverse_force: float = 1200.0
-@export var air_spin_force: float = 25000.0
+@export var engine_force: float = 1000.0
+@export var reverse_force: float = 900.0
+@export var air_spin_force: float = 250000.0
 @export var jump_force: float = 50000.0
 
 @export var wheelie_torque: float = 69600.0 + 191000.0 - 39000.0
@@ -12,6 +12,9 @@ extends RigidBody2D
 @export var sideways_chaos: float = 40000.0
 
 
+func player(): 
+	#this function is for communicating with the pickups dont remove it!!!!
+	pass 
 
 
 

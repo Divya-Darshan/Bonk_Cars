@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b47ib3hgidp0e"]
+
+[ext_resource type="Texture2D" uid="uid://ckcw36df1uxo0" path="res://asset/Images/Pickups/Fuel.png" id="1_nv0it"]
+
+[sub_resource type="GDScript" id="GDScript_nv0it"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method('player'):
+		printerr('hello')
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18fc1"]
+size = Vector2(82.5, 90)
+
+[node name="fuel" type="Area2D" unique_id=1598079040]
+script = SubResource("GDScript_nv0it")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1333944392]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_nv0it")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=782330175]
+position = Vector2(-0.75, 0)
+shape = SubResource("RectangleShape2D_18fc1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

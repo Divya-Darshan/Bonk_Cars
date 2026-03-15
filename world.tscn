@@ -2,7 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://vui4moiq18n1" path="res://asset/Images/Terrain/Grass.png" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://dor2d6no0ylc5" path="res://player/player.tscn" id="2_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://du04kqv0bcn0s" path="res://player/wheel_s.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://b47ib3hgidp0e" path="res://asset/Images/Pickups/fuel.tscn" id="3_tlwt5"]
+[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_gbfbk"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="5_ioo17"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="6_wse8f"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="7_ic0uy"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_k3n1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -29,6 +34,59 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
 size = Vector2(3289.9463, 151.23665)
 
+[sub_resource type="Resource" id="Resource_2o6r5"]
+script = ExtResource("5_ioo17")
+position = Vector2(874.18207, 46.540894)
+
+[sub_resource type="Resource" id="Resource_70uel"]
+script = ExtResource("5_ioo17")
+position = Vector2(325.4232, -131.18213)
+
+[sub_resource type="Resource" id="Resource_hiqwa"]
+script = ExtResource("5_ioo17")
+position = Vector2(152.3771, 211.79211)
+
+[sub_resource type="Resource" id="Resource_2u3nc"]
+script = ExtResource("5_ioo17")
+position = Vector2(387.78217, 458.11)
+
+[sub_resource type="Resource" id="Resource_udxuc"]
+script = ExtResource("5_ioo17")
+position = Vector2(871.064, 417.57666)
+
+[sub_resource type="Resource" id="Resource_ikiii"]
+script = ExtResource("5_ioo17")
+position = Vector2(874.18207, 46.540894)
+
+[sub_resource type="Resource" id="Resource_cbp6q"]
+script = ExtResource("5_ioo17")
+position = Vector2(666.8385, -165.47955)
+
+[sub_resource type="Resource" id="Resource_26xuy"]
+script = ExtResource("5_ioo17")
+position = Vector2(959.9256, 241.41266)
+
+[sub_resource type="Resource" id="Resource_bc84e"]
+script = ExtResource("6_wse8f")
+_points = {
+0: SubResource("Resource_2o6r5"),
+1: SubResource("Resource_70uel"),
+2: SubResource("Resource_hiqwa"),
+3: SubResource("Resource_2u3nc"),
+4: SubResource("Resource_udxuc"),
+5: SubResource("Resource_ikiii"),
+6: SubResource("Resource_cbp6q"),
+7: SubResource("Resource_26xuy")
+}
+_point_order = PackedInt32Array(5, 7, 4, 3, 2, 1, 6, 0)
+_constraints = {
+Vector2i(0, 5): 15
+}
+_next_key = 8
+
+[sub_resource type="Resource" id="Resource_wukud"]
+script = ExtResource("8_k3n1d")
+
 [node name="world" type="Node2D" unique_id=491182622]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1169138204]
@@ -47,7 +105,18 @@ shape = SubResource("RectangleShape2D_036b0")
 position = Vector2(572, 372)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1738401525]
+visible = false
 zoom = Vector2(1.33, 1.33)
 
-[node name="wheel_s" parent="." unique_id=271990230 instance=ExtResource("3_aqk2v")]
-position = Vector2(305, 159)
+[node name="fuel" parent="." unique_id=1598079040 instance=ExtResource("3_tlwt5")]
+position = Vector2(766, 560)
+
+[node name="SS2D_Shape" type="Node2D" parent="." unique_id=1678280122]
+script = ExtResource("4_gbfbk")
+_points = SubResource("Resource_bc84e")
+shape_material = SubResource("Resource_wukud")
+metadata/_custom_type_script = "uid://dhdc4b8yddyej"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=508511658]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=2132458020]
