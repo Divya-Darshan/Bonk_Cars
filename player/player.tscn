@@ -4,40 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://b7erxjhraosy4" path="res://asset/Images/Car/RedCar.png" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://du04kqv0bcn0s" path="res://player/wheel_s.tscn" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://b04boa5cnpqnd" path="res://asset/Images/Characters/Head2.png" id="4_yw30f"]
-[ext_resource type="Texture2D" uid="uid://bxyvwx3h2gpe5" path="res://asset/Images/Characters/Body2.png" id="5_qjkh3"]
-[ext_resource type="Texture2D" uid="uid://5u5pvy4ip2qb" path="res://asset/Images/Characters/Body.png" id="6_g6k8r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6k8r"]
 radius = 37.0
-height = 228.27727
+height = 240.03076
 
 [node name="player" type="RigidBody2D" unique_id=163199929 groups=["player"]]
 script = ExtResource("1_g1dw6")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=781792945]
-
-[node name="back" type="TouchScreenButton" parent="CanvasLayer" unique_id=94348228]
-position = Vector2(80, 392)
-scale = Vector2(2.955, 2.955)
-texture_normal = ExtResource("5_qjkh3")
-texture_pressed = ExtResource("6_g6k8r")
-passby_press = true
-action = "ui_down"
-
-[node name="front" type="TouchScreenButton" parent="CanvasLayer" unique_id=788424368]
-position = Vector2(1096, 407.99997)
-scale = Vector2(-2.955, 2.7)
-texture_normal = ExtResource("5_qjkh3")
-texture_pressed = ExtResource("6_g6k8r")
-passby_press = true
-action = "ui_up"
-
 [node name="car" type="Sprite2D" parent="." unique_id=674603667]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_g1dw6")
 
 [node name="back_con" type="PinJoint2D" parent="." unique_id=2141567344]
-position = Vector2(-61, 32)
+position = Vector2(-25, 11)
+scale = Vector2(0.3, 0.3)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.5
@@ -45,7 +26,8 @@ softness = 2.5
 [node name="wheel_s" parent="back_con" unique_id=271990230 instance=ExtResource("3_g1dw6")]
 
 [node name="front_con" type="PinJoint2D" parent="." unique_id=1218853000]
-position = Vector2(70, 31)
+position = Vector2(28, 11)
+scale = Vector2(0.3, 0.3)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.25
@@ -53,12 +35,13 @@ softness = 2.25
 [node name="wheel_s" parent="front_con" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
 
 [node name="head" type="Sprite2D" parent="." unique_id=498976959]
-position = Vector2(-12.021416, -55.021416)
+position = Vector2(-5.0000014, -24.000006)
 rotation = -0.14939533
-scale = Vector2(0.37066638, 0.37066638)
+scale = Vector2(0.16540983, 0.16540983)
 texture = ExtResource("4_yw30f")
 
 [node name="body" type="CollisionShape2D" parent="." unique_id=1344545330]
-position = Vector2(2, -2)
+position = Vector2(1.0000002, -2.0000002)
 rotation = -1.5779412
+scale = Vector2(0.36661032, 0.36661032)
 shape = SubResource("CapsuleShape2D_g6k8r")
