@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://46ry6b1nfbjb"]
+
+[ext_resource type="Texture2D" uid="uid://dpp3bjq3vt2s" path="res://terrain/map/flat.png" id="1_2v1fu"]
+
+[node name="t1" type="StaticBody2D" unique_id=43852366]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210050360]
+position = Vector2(582, 326)
+scale = Vector2(0.61544114, 0.60483706)
+texture = ExtResource("1_2v1fu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=94918529]
+polygon = PackedVector2Array(-51, 273, -29, 270, 88, 269, 109, 276, 133, 289, 160, 301, 179, 315, 191, 331, 207, 345, 242, 345, 244, 376, 188, 369, 133, 323, 48, 305, -5, 309, -54, 309)
