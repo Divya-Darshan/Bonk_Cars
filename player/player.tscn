@@ -13,12 +13,10 @@ height = 240.03076
 script = ExtResource("1_g1dw6")
 
 [node name="car" type="Sprite2D" parent="." unique_id=674603667]
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_g1dw6")
 
 [node name="back_con" type="PinJoint2D" parent="." unique_id=2141567344]
-position = Vector2(-25, 11)
-scale = Vector2(0.3, 0.3)
+position = Vector2(-119, 60)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.5
@@ -26,8 +24,7 @@ softness = 2.5
 [node name="wheel_s" parent="back_con" unique_id=271990230 instance=ExtResource("3_g1dw6")]
 
 [node name="front_con" type="PinJoint2D" parent="." unique_id=1218853000]
-position = Vector2(28, 11)
-scale = Vector2(0.3, 0.3)
+position = Vector2(140, 60)
 node_a = NodePath("..")
 node_b = NodePath("wheel_s")
 softness = 2.25
@@ -35,13 +32,10 @@ softness = 2.25
 [node name="wheel_s" parent="front_con" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
 
 [node name="head" type="Sprite2D" parent="." unique_id=498976959]
-position = Vector2(-5.0000014, -24.000006)
-rotation = -0.14939533
-scale = Vector2(0.16540983, 0.16540983)
+position = Vector2(-30, -133)
 texture = ExtResource("4_yw30f")
 
 [node name="body" type="CollisionShape2D" parent="." unique_id=1344545330]
-position = Vector2(1.0000002, -2.0000002)
 rotation = -1.5779412
-scale = Vector2(0.36661032, 0.36661032)
+scale = Vector2(1.858599, 1.858599)
 shape = SubResource("CapsuleShape2D_g6k8r")
