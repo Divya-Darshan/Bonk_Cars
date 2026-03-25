@@ -22,6 +22,7 @@ node_b = NodePath("wheel_s")
 softness = 2.5
 
 [node name="wheel_s" parent="back_con" unique_id=271990230 instance=ExtResource("3_g1dw6")]
+position = Vector2(-3, -2)
 
 [node name="front_con" type="PinJoint2D" parent="." unique_id=1218853000]
 position = Vector2(140, 60)
@@ -30,6 +31,7 @@ node_b = NodePath("wheel_s")
 softness = 2.25
 
 [node name="wheel_s" parent="front_con" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
+position = Vector2(-3, -1.9999995)
 
 [node name="head" type="Sprite2D" parent="." unique_id=498976959]
 position = Vector2(-30, -133)
