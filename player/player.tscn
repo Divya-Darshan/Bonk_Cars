@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b7erxjhraosy4" path="res://asset/Images/Car/RedCar.png" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://du04kqv0bcn0s" path="res://player/wheel_s.tscn" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://b04boa5cnpqnd" path="res://asset/Images/Characters/Head2.png" id="4_yw30f"]
+[ext_resource type="Texture2D" uid="uid://btepp3o1w2x6r" path="res://btn/Button - PS Triangle 1.png" id="5_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://wlpv6k2neylw" path="res://btn/Button - PS Triangle White 2.png" id="6_boad6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6k8r"]
 radius = 37.0
@@ -41,3 +43,32 @@ texture = ExtResource("4_yw30f")
 rotation = -1.5779412
 scale = Vector2(1.858599, 1.858599)
 shape = SubResource("CapsuleShape2D_g6k8r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=281897058]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2032955326]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1241.0
+offset_top = -135.0
+offset_right = 1241.0
+offset_bottom = -135.0
+grow_vertical = 0
+scale = Vector2(0.48016527, 0.48016527)
+
+[node name="Forward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer" unique_id=1452005352]
+position = Vector2(-238, -224)
+rotation = 1.5707964
+texture_normal = ExtResource("5_g6k8r")
+texture_pressed = ExtResource("6_boad6")
+passby_press = true
+action = "d"
+
+[node name="Backward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer" unique_id=157143428]
+position = Vector2(-2572.031, 274.9054)
+rotation = -1.5707964
+texture_normal = ExtResource("5_g6k8r")
+texture_pressed = ExtResource("6_boad6")
+passby_press = true
+action = "a"
