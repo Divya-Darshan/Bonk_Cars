@@ -50,25 +50,33 @@ shape = SubResource("CapsuleShape2D_g6k8r")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1241.0
-offset_top = -135.0
-offset_right = 1241.0
-offset_bottom = -135.0
 grow_vertical = 0
 scale = Vector2(0.48016527, 0.48016527)
 
-[node name="Forward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer" unique_id=1452005352]
-position = Vector2(-238, -224)
-rotation = 1.5707964
-texture_normal = ExtResource("5_g6k8r")
-texture_pressed = ExtResource("6_boad6")
-passby_press = true
-action = "d"
-
 [node name="Backward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer" unique_id=157143428]
-position = Vector2(-2572.031, 274.9054)
+position = Vector2(4.1652374, 4.1653137)
 rotation = -1.5707964
 texture_normal = ExtResource("5_g6k8r")
 texture_pressed = ExtResource("6_boad6")
 passby_press = true
 action = "a"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=1934035323]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Forward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer2" unique_id=1452005352]
+position = Vector2(38.99997, -192)
+rotation = 1.5707964
+scale = Vector2(0.48016527, 0.48016527)
+texture_normal = ExtResource("5_g6k8r")
+texture_pressed = ExtResource("6_boad6")
+passby_press = true
+action = "d"
