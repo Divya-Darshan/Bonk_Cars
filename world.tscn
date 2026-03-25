@@ -21,3 +21,10 @@ zoom = Vector2(0.3, 0.3)
 position = Vector2(-506, 856)
 scale = Vector2(4978.559, 5.2911143)
 shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1107126504]
+offset_left = 165910.0
+offset_top = 805.0
+offset_right = 165950.0
+offset_bottom = 845.0
+scale = Vector2(-250558.27, 2.1730294)

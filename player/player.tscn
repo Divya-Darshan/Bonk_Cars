@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b04boa5cnpqnd" path="res://asset/Images/Characters/Head2.png" id="4_yw30f"]
 [ext_resource type="Texture2D" uid="uid://btepp3o1w2x6r" path="res://btn/Button - PS Triangle 1.png" id="5_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://wlpv6k2neylw" path="res://btn/Button - PS Triangle White 2.png" id="6_boad6"]
+[ext_resource type="Texture2D" uid="uid://ujmiq360hc0g" path="res://smoke/smoke.png" id="7_boad6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6k8r"]
 radius = 37.0
@@ -13,6 +14,23 @@ height = 240.03076
 
 [node name="player" type="RigidBody2D" unique_id=163199929 groups=["player"]]
 script = ExtResource("1_g1dw6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1667536014]
+position = Vector2(-231, 56)
+amount = 23
+texture = ExtResource("7_boad6")
+preprocess = 1.0
+speed_scale = 2.04
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 34.6
+gravity = Vector2(0, -50)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+damping_min = 10.0
+damping_max = 20.0
+scale_amount_min = 0.6
+scale_amount_max = 0.9
 
 [node name="car" type="Sprite2D" parent="." unique_id=674603667]
 texture = ExtResource("2_g1dw6")
@@ -24,7 +42,6 @@ node_b = NodePath("wheel_s")
 softness = 2.5
 
 [node name="wheel_s" parent="back_con" unique_id=271990230 instance=ExtResource("3_g1dw6")]
-position = Vector2(-3, -2)
 
 [node name="front_con" type="PinJoint2D" parent="." unique_id=1218853000]
 position = Vector2(140, 60)
@@ -33,7 +50,7 @@ node_b = NodePath("wheel_s")
 softness = 2.25
 
 [node name="wheel_s" parent="front_con" unique_id=1521684825 instance=ExtResource("3_g1dw6")]
-position = Vector2(-3, -1.9999995)
+position = Vector2(0, 4.7683716e-07)
 
 [node name="head" type="Sprite2D" parent="." unique_id=498976959]
 position = Vector2(-30, -133)
@@ -44,16 +61,16 @@ rotation = -1.5779412
 scale = Vector2(1.858599, 1.858599)
 shape = SubResource("CapsuleShape2D_g6k8r")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=281897058]
+[node name="Controls" type="CanvasLayer" parent="." unique_id=281897058]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2032955326]
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls" unique_id=2032955326]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
 scale = Vector2(0.48016527, 0.48016527)
 
-[node name="Backward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer" unique_id=157143428]
+[node name="Backward" type="TouchScreenButton" parent="Controls/HBoxContainer" unique_id=157143428]
 position = Vector2(4.1652374, 4.1653137)
 rotation = -1.5707964
 texture_normal = ExtResource("5_g6k8r")
@@ -61,7 +78,7 @@ texture_pressed = ExtResource("6_boad6")
 passby_press = true
 action = "a"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=1934035323]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Controls" unique_id=1934035323]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -72,7 +89,7 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Forward" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer2" unique_id=1452005352]
+[node name="Forward" type="TouchScreenButton" parent="Controls/HBoxContainer2" unique_id=1452005352]
 position = Vector2(38.99997, -192)
 rotation = 1.5707964
 scale = Vector2(0.48016527, 0.48016527)
