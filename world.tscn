@@ -10,6 +10,7 @@ script/source = "extends Node2D
 
 var peer = ENetMultiplayerPeer.new()
 @export var player_scn: PackedScene
+@onready var ip_input: LineEdit = $Controls/HBoxContainer/CanvasLayer/ip_input
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,8 +33,15 @@ func _add_player(id = 1):
 	player.name = str(id)
 	call_deferred(\"add_child\",player)
 
+
 func _on_join_pressed() -> void:
-	peer.create_client(\"10.178.59.150\", 135)
+	var ip = ip_input.text.strip_edges()
+	
+	if ip == \"\":
+		print(\"Enter an IP address\")
+		return
+	
+	peer.create_client(ip, 135)
 	multiplayer.multiplayer_peer = peer
 "
 
@@ -82,6 +90,15 @@ scale = Vector2(-0.6, -0.6)
 texture_normal = ExtResource("2_aqk2v")
 texture_pressed = ExtResource("3_036b0")
 passby_press = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Controls/HBoxContainer" unique_id=1878378402]
+
+[node name="ip_input" type="LineEdit" parent="Controls/HBoxContainer/CanvasLayer" unique_id=1248439666]
+offset_left = 255.0
+offset_top = 124.99997
+offset_right = 631.19507
+offset_bottom = 172.48996
+scale = Vector2(1.56, 1.56)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=941528989]
 _spawnable_scenes = PackedStringArray("uid://dor2d6no0ylc5")
