@@ -34,6 +34,8 @@ properties/5/replication_mode = 1
 
 [node name="player" type="RigidBody2D" unique_id=163199929 groups=["player"]]
 script = ExtResource("1_g1dw6")
+wobble_strength = 575.175
+sideways_chaos = 40012.28
 
 [node name="car" type="Sprite2D" parent="." unique_id=674603667]
 texture = ExtResource("2_g1dw6")

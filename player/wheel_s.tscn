@@ -6,6 +6,7 @@
 radius = 61.611687
 
 [node name="wheel_s" type="RigidBody2D" unique_id=271990230 groups=["player"]]
+mass = 0.001
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1979362960]
 texture = ExtResource("1_6ffra")
