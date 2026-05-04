@@ -15,6 +15,7 @@ ss2d/version="3.3.1"
 [application]
 
 config/name="Bonk_Cars"
+run/main_scene="uid://y0y3g6q7nsfe"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
