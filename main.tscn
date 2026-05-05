@@ -1,10 +1,28 @@
 [gd_scene format=3 uid="uid://y0y3g6q7nsfe"]
 
 [ext_resource type="Texture2D" uid="uid://181me4eskv3g" path="res://terrain/drawing.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://tqo5gtqqvbyd" path="res://player/car.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dxuevdanxd5bd" path="res://player/Images/Car/RedCar.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bwxdqke0kw5rv" path="res://player/Images/Car/Wheel.png" id="3_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(22.00196, 22.659832)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
+radius = 62.361847
 
 [node name="main" type="Node2D" unique_id=731119400]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1256404169]
+offset_left = -11716.0
+offset_top = -6121.0
+offset_right = -11676.0
+offset_bottom = -6081.0
+scale = Vector2(655.04663, 313.1615)
+color = Color(0.2509804, 0.28235295, 0.3137255, 1)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1325380542]
+position = Vector2(0.5, 0)
 texture = ExtResource("1_ig7tw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=874381884]
@@ -13,5 +31,52 @@ texture = ExtResource("1_ig7tw")
 position = Vector2(-7, -7)
 polygon = PackedVector2Array(1112, -1308, -1014, -1284, -1344, -1230, -1727, -1022, -2676, -1022, -3544, -1096, -3557, -1984, 3567, -2004, 3644, -1272, 3626, 2037, -3524, 2007, -3544, -1088, -1733, -1011, -1847, -901, -1974, -741, -2086, -568, -2136, -427, -2173, -292, -2194, -194, -2208, -50, -2206, 64, -2199, 148, -2189, 235, -2176, 298, -2160, 359, -2137, 435, -2108, 507, -2077, 573, -2041, 640, -2006, 705, -1960, 770, -1870, 886, -1726, 1024, -1578, 1128, -1475, 1184, -1368, 1229, -1204, 1281, -1002, 1315, -48, 1323, 271, 1324, 611, 1324, 820, 1326, 1056, 1325, 1230, 1306, 1518, 1220, 1779, 1080, 1957, 920, 2112, 730, 2223, 527, 2281, 369, 2322, 154, 2331, -2, 2318, -182, 2296, -307, 2241, -476, 2202, -565, 2143, -673, 2087, -763, 2006, -861, 1916, -957, 1818, -1040, 1697, -1119, 1535, -1209)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1544349169]
+position = Vector2(39.5, 144)
+scale = Vector2(93.35532, 15.975404)
+shape = SubResource("RectangleShape2D_ig7tw")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=609466569]
+position = Vector2(0.5, 0)
 zoom = Vector2(0.162, 0.162)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1512307199]
+position = Vector2(-63.5, -383)
+mass = 0.115
+script = ExtResource("2_1bvp3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=255163458]
+polygon = PackedVector2Array(-65, 103, -48, 88, 24, 84, 67, 112, 140, 113, 164, 85, 221, 87, 298, 105, 353, 126, 371, 136, 376, 244, 300, 245, -73, 246)
+
+[node name="RedCar" type="Sprite2D" parent="RigidBody2D" unique_id=1501726126]
+position = Vector2(156, 145)
+texture = ExtResource("2_h2yge")
+
+[node name="front" type="PinJoint2D" parent="RigidBody2D" unique_id=1441937886]
+position = Vector2(6, 244)
+node_a = NodePath("..")
+node_b = NodePath("wheel")
+
+[node name="wheel" type="RigidBody2D" parent="RigidBody2D/front" unique_id=2016693329 groups=["wheel"]]
+position = Vector2(1, 0)
+mass = 0.01
+
+[node name="Wheel" type="Sprite2D" parent="RigidBody2D/front/wheel" unique_id=1796637911]
+texture = ExtResource("3_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/front/wheel" unique_id=473468490]
+shape = SubResource("CircleShape2D_lquwl")
+
+[node name="back" type="PinJoint2D" parent="RigidBody2D" unique_id=1597482521]
+position = Vector2(269, 244)
+node_a = NodePath("..")
+node_b = NodePath("wheel")
+
+[node name="wheel" type="RigidBody2D" parent="RigidBody2D/back" unique_id=766428020 groups=["wheel"]]
+mass = 0.01
+
+[node name="Wheel" type="Sprite2D" parent="RigidBody2D/back/wheel" unique_id=1568546864]
+texture = ExtResource("3_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/back/wheel" unique_id=1907991451]
+shape = SubResource("CircleShape2D_lquwl")
