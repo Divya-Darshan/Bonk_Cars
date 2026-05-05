@@ -1,12 +1,26 @@
 [gd_scene format=3 uid="uid://y0y3g6q7nsfe"]
 
+[ext_resource type="Texture2D" uid="uid://bc7eh18orjhlr" path="res://terrain/map/1.png" id="1_ig7tw"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 
 [node name="main" type="Node2D" unique_id=731119400]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=874381884]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1587314184]
 position = Vector2(551.00006, 620)
 scale = Vector2(282.24982, 1.9533598)
 shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=49565167]
+offset_left = -749.0
+offset_top = -493.0
+offset_right = 2009.0
+offset_bottom = 1247.0
+color = Color(0.22059643, 0.24354261, 0.27508634, 1)
+
+[node name="1" type="Sprite2D" parent="." unique_id=393219359]
+position = Vector2(2816, 784)
+texture = ExtResource("1_ig7tw")
