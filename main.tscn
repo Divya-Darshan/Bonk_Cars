@@ -1,26 +1,17 @@
 [gd_scene format=3 uid="uid://y0y3g6q7nsfe"]
 
-[ext_resource type="Texture2D" uid="uid://bc7eh18orjhlr" path="res://terrain/map/1.png" id="1_ig7tw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
+[ext_resource type="Texture2D" uid="uid://181me4eskv3g" path="res://terrain/drawing.svg" id="1_ig7tw"]
 
 [node name="main" type="Node2D" unique_id=731119400]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=874381884]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1587314184]
-position = Vector2(551.00006, 620)
-scale = Vector2(282.24982, 1.9533598)
-shape = SubResource("RectangleShape2D_7dm0k")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=49565167]
-offset_left = -749.0
-offset_top = -493.0
-offset_right = 2009.0
-offset_bottom = 1247.0
-color = Color(0.22059643, 0.24354261, 0.27508634, 1)
-
-[node name="1" type="Sprite2D" parent="." unique_id=393219359]
-position = Vector2(2816, 784)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1325380542]
 texture = ExtResource("1_ig7tw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=874381884]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=1090007197]
+position = Vector2(-7, -7)
+polygon = PackedVector2Array(1112, -1308, -1014, -1284, -1344, -1230, -1727, -1022, -2676, -1022, -3544, -1096, -3557, -1984, 3567, -2004, 3644, -1272, 3626, 2037, -3524, 2007, -3544, -1088, -1733, -1011, -1847, -901, -1974, -741, -2086, -568, -2136, -427, -2173, -292, -2194, -194, -2208, -50, -2206, 64, -2199, 148, -2189, 235, -2176, 298, -2160, 359, -2137, 435, -2108, 507, -2077, 573, -2041, 640, -2006, 705, -1960, 770, -1870, 886, -1726, 1024, -1578, 1128, -1475, 1184, -1368, 1229, -1204, 1281, -1002, 1315, -48, 1323, 271, 1324, 611, 1324, 820, 1326, 1056, 1325, 1230, 1306, 1518, 1220, 1779, 1080, 1957, 920, 2112, 730, 2223, 527, 2281, 369, 2322, 154, 2331, -2, 2318, -182, 2296, -307, 2241, -476, 2202, -565, 2143, -673, 2087, -763, 2006, -861, 1916, -957, 1818, -1040, 1697, -1119, 1535, -1209)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=609466569]
+zoom = Vector2(0.162, 0.162)
