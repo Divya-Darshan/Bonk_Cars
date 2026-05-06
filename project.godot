@@ -18,7 +18,8 @@ config/name="Bonk_Cars"
 run/main_scene="uid://y0y3g6q7nsfe"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="uid://cfhgvck277cdy"
+boot_splash/show_image=false
+config/icon="uid://4q335xxs2p"
 
 [display]
 
