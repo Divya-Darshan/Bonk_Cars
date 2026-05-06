@@ -17,7 +17,7 @@ ss2d/version="3.3.1"
 config/name="Bonk_Cars"
 run/main_scene="uid://y0y3g6q7nsfe"
 config/features=PackedStringArray("4.6", "Mobile")
-boot_splash/image="uid://cw3c63vyvh3lh"
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://cfhgvck277cdy"
 
 [display]

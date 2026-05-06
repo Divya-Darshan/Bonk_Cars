@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y0y3g6q7nsfe"]
 
 [ext_resource type="Texture2D" uid="uid://181me4eskv3g" path="res://terrain/drawing.svg" id="1_ig7tw"]
-[ext_resource type="Script" path="res://player/car.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://tqo5gtqqvbyd" path="res://player/car.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bwxdqke0kw5rv" path="res://player/Images/Car/Wheel.png" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://btepp3o1w2x6r" path="res://btn/Button - PS Triangle 1.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://wlpv6k2neylw" path="res://btn/Button - PS Triangle White 2.png" id="6_272bh"]
@@ -64,19 +64,24 @@ zoom = Vector2(0.162, 0.162)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1512307199]
 position = Vector2(-420, 566)
-mass = 0.115
+mass = 0.001
 script = ExtResource("2_1bvp3")
+speed = 59999.365
+air_torque = 12001.13
+flip_force = 25001.885
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=255163458]
-polygon = PackedVector2Array(-182, 120, -226, 25, 0, -55, -2, -17, 48, 32, 253, 34, 249, -51, 352, 24, 464, 47, 557, 85, 635, 134, 636, 272, 13, 266, -247, 204)
+position = Vector2(-68, -43.999985)
+scale = Vector2(0.6979993, 0.6979993)
+polygon = PackedVector2Array(-257.87988, 27.220642, -226, 25, 0, -55, -2, -17, 48, 32, 253, 34, 249, -51, 352, 24, 464, 47, 557, 85, 635, 134, 636, 272, 14.32666, 270.77393, -194.84259, 126.074646)
 
 [node name="RedCar" type="Sprite2D" parent="RigidBody2D" unique_id=1501726126]
-position = Vector2(179.00006, 123)
-scale = Vector2(0.305, 0.305)
+position = Vector2(54.820007, 45.387474)
+scale = Vector2(0.22287035, 0.22287035)
 texture = ExtResource("7_272bh")
 
 [node name="front" type="PinJoint2D" parent="RigidBody2D" unique_id=1441937886]
-position = Vector2(-127, 259)
+position = Vector2(-155, 122.000015)
 scale = Vector2(0.8288561, 0.8288561)
 node_a = NodePath("..")
 node_b = NodePath("wheel")
@@ -87,16 +92,16 @@ mass = 0.001
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D/front/wheel" unique_id=1796637911]
 position = Vector2(-1.1026859e-05, 6.41346e-05)
-scale = Vector2(2.0201478, 2.0201478)
+scale = Vector2(1.3334808, 1.3334808)
 texture = ExtResource("3_1bvp3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/front/wheel" unique_id=473468490]
 position = Vector2(-1.1056662e-05, 6.41942e-05)
-scale = Vector2(2.0232036, 2.0232036)
+scale = Vector2(1.335498, 1.335498)
 shape = SubResource("CircleShape2D_lquwl")
 
 [node name="back" type="PinJoint2D" parent="RigidBody2D" unique_id=1597482521]
-position = Vector2(337.00003, 273)
+position = Vector2(176, 126)
 scale = Vector2(0.82394665, 0.82394665)
 node_a = NodePath("..")
 node_b = NodePath("wheel")
@@ -106,10 +111,10 @@ mass = 0.001
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D/back/wheel" unique_id=1568546864]
 position = Vector2(-4.005432e-05, -4.0650368e-05)
-scale = Vector2(1.9948782, 1.9948782)
+scale = Vector2(1.3104929, 1.3104929)
 texture = ExtResource("3_1bvp3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/back/wheel" unique_id=1907991451]
 position = Vector2(-4.029274e-05, -4.041195e-05)
-scale = Vector2(1.9857926, 1.9857926)
+scale = Vector2(1.3045244, 1.3045244)
 shape = SubResource("CircleShape2D_lquwl")
