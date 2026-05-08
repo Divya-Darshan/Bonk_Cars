@@ -13,6 +13,9 @@ size = Vector2(22.00196, 22.659832)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
 radius = 62.361847
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mycd"]
+height = 28.635569
+
 [node name="main" type="Node2D" unique_id=731119400]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1256404169]
@@ -25,19 +28,40 @@ color = Color(0.2509804, 0.28235295, 0.3137255, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1439230430]
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer" unique_id=1019332243]
-position = Vector2(139.49142, 635.05066)
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1162463543]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer" unique_id=1019332243]
+position = Vector2(11.999939, 37)
 rotation = -1.5817174
-scale = Vector2(0.28451544, 0.28451544)
+scale = Vector2(0.44212845, 0.44212845)
 texture_normal = ExtResource("5_7mycd")
 texture_pressed = ExtResource("6_272bh")
 passby_press = true
 action = "ui_left"
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer" unique_id=85777908]
-position = Vector2(1011.49146, 498.05066)
-rotation = -4.721883
-scale = Vector2(0.2873036, 0.2873036)
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=2021316284]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -111.0
+offset_right = -61.0
+offset_bottom = -71.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer2" unique_id=85777908]
+position = Vector2(103.999985, -102.99999)
+rotation = 1.5613025
+scale = Vector2(0.4592332, 0.4592332)
 texture_normal = ExtResource("5_7mycd")
 texture_pressed = ExtResource("6_272bh")
 passby_press = true
@@ -60,51 +84,46 @@ shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=609466569]
 position = Vector2(0.5, 0)
-zoom = Vector2(0.162, 0.162)
+zoom = Vector2(0.2, 0.2)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1512307199]
-position = Vector2(-420, 566)
-mass = 0.6
+position = Vector2(-100, -319)
 script = ExtResource("2_1bvp3")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=255163458]
-position = Vector2(-52, -41.999985)
-scale = Vector2(0.6979993, 0.6979993)
-polygon = PackedVector2Array(-260.74524, 242.12054, -257.87988, 164.75659, -244.9859, 136.10327, -224.92859, 97.421326, -190.54456, 61.604675, -148.99725, 30.085999, -107.44995, 21.48999, 10.028687, 20.057312, 65.90265, 73.06598, 308.02322, 77.36395, 322.34988, 28.65332, 446.99185, 31.518616, 507.16382, 58.73932, 545.8458, 93.12329, 581.6625, 154.7279, 583.09515, 212.03455, 567.3358, 236.3899, 531.51917, 242.12054)
-
 [node name="RedCar" type="Sprite2D" parent="RigidBody2D" unique_id=1501726126]
-position = Vector2(54.820007, 45.387474)
+position = Vector2(0.519989, -76.38752)
 scale = Vector2(0.22287035, 0.22287035)
 texture = ExtResource("7_272bh")
 
 [node name="front" type="PinJoint2D" parent="RigidBody2D" unique_id=1441937886]
-position = Vector2(227.00002, 155.00002)
+position = Vector2(177.99997, 47.000015)
 scale = Vector2(0.8288561, 0.8288561)
 node_a = NodePath("..")
 node_b = NodePath("wheel")
 
 [node name="wheel" type="RigidBody2D" parent="RigidBody2D/front" unique_id=2016693329 groups=["wheel"]]
-position = Vector2(-2.0980835e-05, 0)
-mass = 0.2
+position = Vector2(-9.1552734e-05, 0)
+mass = 0.005
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D/front/wheel" unique_id=1796637911]
-position = Vector2(7.987022e-06, -1.0281801e-05)
-scale = Vector2(1.4812331, 1.4812331)
+position = Vector2(1.335144e-05, -1.04904175e-05)
+scale = Vector2(1.468, 1.468)
 texture = ExtResource("3_1bvp3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/front/wheel" unique_id=473468490]
-position = Vector2(7.987022e-06, -1.0281801e-05)
-scale = Vector2(1.4834738, 1.4834738)
+position = Vector2(1.335144e-05, -1.04904175e-05)
+scale = Vector2(1.468, 1.468)
 shape = SubResource("CircleShape2D_lquwl")
 
 [node name="back" type="PinJoint2D" parent="RigidBody2D" unique_id=1597482521]
-position = Vector2(-127, 153)
+position = Vector2(-179.99997, 47)
 scale = Vector2(0.82394665, 0.82394665)
 node_a = NodePath("..")
 node_b = NodePath("wheel")
 
 [node name="wheel" type="RigidBody2D" parent="RigidBody2D/back" unique_id=766428020 groups=["wheel"]]
-mass = 0.2
+position = Vector2(0, 9.536743e-07)
+mass = 0.005
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D/back/wheel" unique_id=1568546864]
 position = Vector2(-4.005432e-05, -4.0650368e-05)
@@ -115,3 +134,9 @@ texture = ExtResource("3_1bvp3")
 position = Vector2(-4.029274e-05, -4.041195e-05)
 scale = Vector2(1.4612854, 1.4612854)
 shape = SubResource("CircleShape2D_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=730313730]
+position = Vector2(5.999999, -72)
+rotation = -1.5707964
+scale = Vector2(8.180268, 20.25453)
+shape = SubResource("CapsuleShape2D_7mycd")
