@@ -87,7 +87,8 @@ position = Vector2(0.5, 0)
 zoom = Vector2(0.2, 0.2)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1512307199]
-position = Vector2(-100, -319)
+position = Vector2(-2029, 235)
+rotation = 1.3089969
 script = ExtResource("2_1bvp3")
 
 [node name="RedCar" type="Sprite2D" parent="RigidBody2D" unique_id=1501726126]
