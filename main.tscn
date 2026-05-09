@@ -10,11 +10,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(22.00196, 22.659832)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
-radius = 62.361847
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mycd"]
 height = 28.635569
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
+radius = 62.361847
 
 [node name="main" type="Node2D" unique_id=731119400]
 
@@ -87,57 +87,64 @@ position = Vector2(0.5, 0)
 zoom = Vector2(0.2, 0.2)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1512307199]
-position = Vector2(-2029, 235)
-rotation = 1.3089969
+position = Vector2(-378.00003, 1194)
+rotation = 0.0058003664
+gravity_scale = 1.2
+linear_damp = 0.3
+angular_damp = 1.0
 script = ExtResource("2_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=730313730]
+position = Vector2(6.0000305, -72.00012)
+rotation = -1.5707964
+scale = Vector2(6.5823216, 16.297977)
+shape = SubResource("CapsuleShape2D_7mycd")
 
 [node name="RedCar" type="Sprite2D" parent="RigidBody2D" unique_id=1501726126]
 position = Vector2(0.519989, -76.38752)
-scale = Vector2(0.22287035, 0.22287035)
+scale = Vector2(0.16509886, 0.16509886)
 texture = ExtResource("7_272bh")
 
 [node name="front" type="PinJoint2D" parent="RigidBody2D" unique_id=1441937886]
-position = Vector2(177.99997, 47.000015)
+position = Vector2(132.02684, 4.234222)
 scale = Vector2(0.8288561, 0.8288561)
 node_a = NodePath("..")
 node_b = NodePath("wheel")
 
 [node name="wheel" type="RigidBody2D" parent="RigidBody2D/front" unique_id=2016693329 groups=["wheel"]]
 position = Vector2(-9.1552734e-05, 0)
-mass = 0.005
+mass = 0.004
+linear_damp = 0.1
+angular_damp = 0.2
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D/front/wheel" unique_id=1796637911]
-position = Vector2(1.335144e-05, -1.04904175e-05)
-scale = Vector2(1.468, 1.468)
+position = Vector2(0.00011789799, -2.6226044e-06)
+scale = Vector2(0.97409797, 0.97409797)
 texture = ExtResource("3_1bvp3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/front/wheel" unique_id=473468490]
-position = Vector2(1.335144e-05, -1.04904175e-05)
-scale = Vector2(1.468, 1.468)
+position = Vector2(0.00010353327, -4.529953e-05)
+scale = Vector2(0.97409797, 0.97409797)
 shape = SubResource("CircleShape2D_lquwl")
 
 [node name="back" type="PinJoint2D" parent="RigidBody2D" unique_id=1597482521]
-position = Vector2(-179.99997, 47)
+position = Vector2(-132.96872, 5.771312)
 scale = Vector2(0.82394665, 0.82394665)
 node_a = NodePath("..")
 node_b = NodePath("wheel")
 
 [node name="wheel" type="RigidBody2D" parent="RigidBody2D/back" unique_id=766428020 groups=["wheel"]]
 position = Vector2(0, 9.536743e-07)
-mass = 0.005
+mass = 0.004
+linear_damp = 0.1
+angular_damp = 0.2
 
 [node name="Wheel" type="Sprite2D" parent="RigidBody2D/back/wheel" unique_id=1568546864]
 position = Vector2(-4.005432e-05, -4.0650368e-05)
-scale = Vector2(1.467971, 1.467971)
+scale = Vector2(0.97873825, 0.97873825)
 texture = ExtResource("3_1bvp3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/back/wheel" unique_id=1907991451]
 position = Vector2(-4.029274e-05, -4.041195e-05)
-scale = Vector2(1.4612854, 1.4612854)
+scale = Vector2(0.97428066, 0.97428066)
 shape = SubResource("CircleShape2D_lquwl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=730313730]
-position = Vector2(5.999999, -72)
-rotation = -1.5707964
-scale = Vector2(8.180268, 20.25453)
-shape = SubResource("CapsuleShape2D_7mycd")
